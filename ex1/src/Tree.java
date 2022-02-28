@@ -4,6 +4,11 @@ public abstract class Tree implements Comparable, Seasonable {
     protected Color leavesColor;
     // TODO: Add auxiliary fields and functions.
 
+    // refactoring,
+    // by default we assume there are leaves and no fruits
+    protected boolean presenceOfLeaves = true;
+    protected boolean giveFruits = false;
+
     Tree(int height, Season season, Color leavesColor) {
         this.height = height;
         this.season = season;
@@ -31,6 +36,10 @@ public abstract class Tree implements Comparable, Seasonable {
 
     @Override
     public String toString() {
-        return "My height is: " + this.height + "and my color is: " + this.leavesColor;
+        if (presenceOfLeaves) {
+            return "My height is: " + this.height + "and my color is: " + this.leavesColor;
+        } else {
+            return "My height is: " + this.height + "and I have no leaves ";
+        }
     }
 }
