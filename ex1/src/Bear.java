@@ -19,12 +19,12 @@ public class Bear extends Animal {
         switch (getCurrentSeason()) {
 
             case WINTER:
-                weight = (int) (weight - (weight * 0.3));
+                weight = (int) (weight - (weight * 0.2));
                 isAsleep = true;
                 break;
 
             case SPRING:
-                weight = (int) (weight + (weight * 0.35));
+                weight = (int) (weight - (weight * 0.25));
                 isAsleep = false;
                 break;
 
