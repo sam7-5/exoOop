@@ -9,11 +9,11 @@ public class SeasonUtil {
     }
 
     static String reportAll(Seasonable[] seasonables) {
-        StringBuilder tout = null;
+        String result = "";
         for (Seasonable seasonable : seasonables) {
-            tout.append(seasonable.toString());
-            tout.append('\n');
+            result += seasonable.toString();
+            result += "\n";
         }
-        return tout.toString();
+        return result;
     }
 }
