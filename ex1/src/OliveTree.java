@@ -8,11 +8,36 @@ public class OliveTree extends Tree {
 
     @Override
     public String toString() {
-        // TODO: Implement.
-        return null;
+        // maybe implement giveFruits in the super class is cleaner ...
+        return "Olive Tree. " + ((giveFruits) ? "I give fruit. " : "") + super.toString();
+
     }
     @Override
     public void changeSeason() {
-        // TODO: Implement.
+
+        super.changeSeason();
+        Season newSeason = super.getCurrentSeason();
+
+        switch (newSeason) {
+
+            case WINTER:
+                height += 5;
+                //presenceOfLeaves = false;
+                break;
+
+            case SPRING:
+
+            case SUMMER:
+                height += 10;
+                //presenceOfLeaves = true;
+                //leavesColor = Color.GREEN;
+                break;
+            //there are leaves because we come from spring
+
+            case FALL:
+                height += 5;
+                giveFruits = true;
+                break;
+        }
     }
 }
