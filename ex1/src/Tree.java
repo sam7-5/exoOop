@@ -17,7 +17,10 @@ public abstract class Tree implements Comparable, Seasonable {
 
     @Override
     public int compareTo(Object o) {
-        // TODO: Implement.
-        return 0;
+        // naive implementation, maybe exception
+        Tree temp = (Tree)o;
+
+        // 0 -> equal, 1-> this greater, negative number -> this smaller
+        return this.height - temp.height;
     }
 }
