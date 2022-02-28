@@ -1,8 +1,7 @@
 public class FigTree extends Tree {
 
     FigTree(int height, Season season) {
-        // TODO: Implement.
-        super(0, null, null);
+        super(height, season, Color.YELLOW);
     }
 
     @Override
