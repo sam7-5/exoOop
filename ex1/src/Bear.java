@@ -7,8 +7,10 @@ public class Bear extends Animal {
 
     @Override
     public String toString() {
-        // TODO: Implement.
-        return null;
+        if (getCurrentSeason() == Season.WINTER)
+            return "Bear. I am sleeping. " + super.toString();
+        else
+            return "Bear. " + super.toString();
     }
 
     @Override

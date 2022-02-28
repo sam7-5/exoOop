@@ -11,6 +11,11 @@ public abstract class Animal implements Seasonable, Comparable {
     }
 
     @Override
+    public String toString() {
+        return "My weight is: " + this.weight + "and my color is: " + this.color;
+    }
+
+    @Override
     public void changeSeason() {
         this.season = season.next();
     }
@@ -22,7 +27,15 @@ public abstract class Animal implements Seasonable, Comparable {
 
     @Override
     public int compareTo(Object o) {
-        // TODO: Implement.
-        return 0;
+
+        Bear temp = (Bear) o;
+        if (this.weight - temp.weight == 0)
+            return 0;
+        else if (this.weight - temp.weight < 0)
+            return -1;
+        else
+            return 1;
+        // 0 -> equal, 1-> this greater, negative number -> this smaller
+
     }
 }
