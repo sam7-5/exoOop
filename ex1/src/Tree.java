@@ -6,7 +6,7 @@ public abstract class Tree implements Comparable, Seasonable {
     // refactoring,
     // by default we assume there are leaves and no fruits
     protected boolean presenceOfLeaves = true;
-    protected boolean giveFruits = true; // false
+    protected boolean giveFruits = false;
 
     Tree(int height, Season season, Color leavesColor) {
         this.height = height;

@@ -8,7 +8,7 @@ public class FigTree extends Tree {
     public String toString() {
 
         // maybe implement giveFruits in the super class is cleaner ...
-        return "FigTree. " + ((giveFruits) ? "I give fruit. " : "") + super.toString();
+        return "Fig tree. " + ((giveFruits) ? "I give fruit. " : "") + super.toString();
     }
 
     @Override

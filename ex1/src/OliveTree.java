@@ -3,6 +3,7 @@ public class OliveTree extends Tree {
 
     OliveTree(int height, Season season) {
         super(height,season,Color.GREEN);
+        giveFruits = true;
     }
 
     @Override
@@ -22,7 +23,6 @@ public class OliveTree extends Tree {
             case WINTER:
                 height += 5;
                 giveFruits = false;
-                //presenceOfLeaves = false;
                 break;
 
             case SPRING:
@@ -33,10 +33,7 @@ public class OliveTree extends Tree {
             case SUMMER:
                 height += 10;
                 giveFruits = false;
-                //presenceOfLeaves = true;
-                //leavesColor = Color.GREEN;
                 break;
-            //there are leaves because we come from spring
 
             case FALL:
                 height += 5;
