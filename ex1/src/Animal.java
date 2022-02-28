@@ -27,7 +27,7 @@ public abstract class Animal implements Seasonable, Comparable {
     @Override
     public int compareTo(Object o) {
 
-        Bear temp = (Bear) o;
+        Animal temp = (Animal) o;
         if (this.weight - temp.weight == 0)
             return 0;
         else if (this.weight - temp.weight < 0)
