@@ -8,7 +8,7 @@ public class OliveTree extends Tree {
     @Override
     public String toString() {
         // maybe implement giveFruits in the super class is cleaner ...
-        return "Olive Tree. " + ((giveFruits) ? "I give fruit. " : "") + super.toString();
+        return "Olive tree. " + ((giveFruits) ? "I give fruit. " : "") + super.toString();
 
     }
     @Override
@@ -21,13 +21,18 @@ public class OliveTree extends Tree {
 
             case WINTER:
                 height += 5;
+                giveFruits = false;
                 //presenceOfLeaves = false;
                 break;
 
             case SPRING:
+                height += 10;
+                giveFruits = false;
+                break;
 
             case SUMMER:
                 height += 10;
+                giveFruits = false;
                 //presenceOfLeaves = true;
                 //leavesColor = Color.GREEN;
                 break;

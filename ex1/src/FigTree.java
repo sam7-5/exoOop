@@ -21,12 +21,14 @@ public class FigTree extends Tree {
             case WINTER:
                 height += 20;
                 presenceOfLeaves = false;
+                giveFruits = false;
                 break;
 
             case SPRING:
                 height += 30;
                 presenceOfLeaves = true;
                 leavesColor = Color.GREEN;
+                giveFruits = false;
                 break;
 
             case SUMMER:
@@ -38,6 +40,7 @@ public class FigTree extends Tree {
             case FALL:
                 height += 20;
                 leavesColor = Color.YELLOW;
+                giveFruits = false;
                 break;
         }
     }

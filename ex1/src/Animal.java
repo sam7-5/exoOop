@@ -11,7 +11,7 @@ public abstract class Animal implements Seasonable, Comparable {
 
     @Override
     public String toString() {
-        return "My weight is: " + this.weight + "and my color is: " + this.color;
+        return "My weight is: " + this.weight + " and my color is: " + this.color;
     }
 
     @Override

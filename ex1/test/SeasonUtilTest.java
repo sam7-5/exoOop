@@ -36,7 +36,7 @@ public class SeasonUtilTest {
         System.out.println("\n---change six seasons for animals and trees---\n");
         for (int i = 0; i<6; i++) {
             for (Seasonable seasonable:seasonables) {
-                seasonable.changeSeason();
+                seasonable.changeSea son();
             }
             System.out.println("\n---All together after changing season---\n");
             System.out.println(SeasonUtil.reportAll(seasonables));
