@@ -29,7 +29,7 @@ public class Bear extends Animal {
                 break;
 
             case SUMMER:
-                weight = weight - (weight / 3);
+                weight = weight + (weight / 3);
                 isAsleep = false;
                 break;
 
