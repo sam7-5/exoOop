@@ -22,13 +22,13 @@ public class SeasonUtilTest {
         System.out.println(SeasonUtil.reportAll(animals));
         System.out.println("\n---All trees---\n");
         System.out.println(SeasonUtil.reportAll(trees));
-
-
+        
         Seasonable[] seasonables = new Seasonable[TOTAL*2] ;
         for (int i = 0; i < TOTAL; i++) {
             seasonables[2*i] = animals[i];
             seasonables[2*i+1] = trees[i];
         }
+        
 
         System.out.println("\n---All together---\n");
         System.out.println(SeasonUtil.reportAll(seasonables));
