@@ -8,29 +8,26 @@ public class Customer {
     private String name;
     private int tier;
 
-    public Customer(String customerInfo)
-    {
-         String[] parts = customerInfo.split(" ");
-         try {
-             id = Long.parseLong(parts[1]);
-             tier = Integer.parseInt(parts[5]);
-         } catch (NumberFormatException e){
-             e.printStackTrace();
-         }
+    public Customer(String customerInfo) {
+        String[] parts = customerInfo.split(" ");
+        try {
+            id = Long.parseLong(parts[1]);
+            tier = Integer.parseInt(parts[5]);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
         name = parts[3];
 
     }
 
-    public Customer(long Cid,String Cname, int Ctier)
-    {
+    public Customer(long Cid, String Cname, int Ctier) {
         setId(Cid);
         setName(Cname);
         setTier(Ctier);
     }
 
-    public String toString()
-    {
-        return "customer: "+ getId() + " name: "+ getName() +" tier: "+ getTier()+"\n";
+    public String toString() {
+        return "customer: " + getId() + " name: " + getName() + " tier: " + getTier() + "\n";
     }
 
     public long getId() {

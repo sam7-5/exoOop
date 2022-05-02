@@ -9,24 +9,21 @@ public class OrderProduct {
     private long productId;
     private int quantity;
 
-    public OrderProduct(String orderInfo)
-    {
+    public OrderProduct(String orderInfo) {
         String[] names = orderInfo.split(" ");
-        orderId=Long.parseLong(names[2]);
-        productId=Long.parseLong(names[5]);
-        quantity=Integer.parseInt(names[7]);
+        orderId = Long.parseLong(names[2]);
+        productId = Long.parseLong(names[5]);
+        quantity = Integer.parseInt(names[7]);
     }
 
-    public OrderProduct(long oId, long pId, int quantity)
-    {
+    public OrderProduct(long oId, long pId, int quantity) {
         setOrderId(oId);
         setProductId(pId);
         setQuantity(quantity);
     }
 
-    public String toString()
-    {
-        return "ord id: "+ getOrderId() + " prod id: "+ getProductId() +" quantity: "+ getQuantity()+"\n";
+    public String toString() {
+        return "ord id: " + getOrderId() + " prod id: " + getProductId() + " quantity: " + getQuantity() + "\n";
     }
 
     public long getOrderId() {

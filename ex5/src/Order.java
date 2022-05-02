@@ -15,7 +15,7 @@ public class Order {
 
     private long customrId;
 
-    public Order(String orderInfo)  {
+    public Order(String orderInfo) {
 
         String[] parts = orderInfo.split(" ");
         try {
@@ -24,12 +24,13 @@ public class Order {
             deliveryDate = new SimpleDateFormat("dd/MM/yyyy").parse(parts[7]);
             status = OrderStatus.valueOf(parts[9]);
             customrId = Long.parseLong(parts[12]);
-        }catch (Exception e){ e.printStackTrace();}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
-    public Order(long Oid, Date OorderDate, Date OdeliveryDate, OrderStatus Ostatus, long OcustomrId)
-    {
+    public Order(long Oid, Date OorderDate, Date OdeliveryDate, OrderStatus Ostatus, long OcustomrId) {
         setOrderId(Oid);
         setOrderDate(OorderDate);
         setDeliveryDate(OdeliveryDate);
@@ -38,11 +39,9 @@ public class Order {
     }
 
 
-
-    public String toString()
-    {
-        SimpleDateFormat ft = new SimpleDateFormat ("dd/MM/yyyy");
-        return "order: "+ getOrderId() + " order date: "+ ft.format(getOrderDate()) +" delivery date: "+ ft.format(getDeliveryDate()) + " status: "+ getStatus() + " customr id: "+ getCustomrId()+"\n";
+    public String toString() {
+        SimpleDateFormat ft = new SimpleDateFormat("dd/MM/yyyy");
+        return "order: " + getOrderId() + " order date: " + ft.format(getOrderDate()) + " delivery date: " + ft.format(getDeliveryDate()) + " status: " + getStatus() + " customr id: " + getCustomrId() + "\n";
     }
 
     public long getOrderId() {
