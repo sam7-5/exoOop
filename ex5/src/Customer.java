@@ -10,7 +10,15 @@ public class Customer {
 
     public Customer(String customerInfo)
     {
-         //To Do
+         String[] parts = customerInfo.split(" ");
+         try {
+             id = Long.parseLong(parts[1]);
+             tier = Integer.parseInt(parts[5]);
+         } catch (NumberFormatException e){
+             e.printStackTrace();
+         }
+        name = parts[3];
+
     }
 
     public Customer(long Cid,String Cname, int Ctier)
