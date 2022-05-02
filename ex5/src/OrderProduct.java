@@ -1,5 +1,7 @@
 
 
+import java.util.Date;
+
 import static java.lang.Long.parseLong;
 
 public class OrderProduct {
@@ -9,7 +11,10 @@ public class OrderProduct {
 
     public OrderProduct(String orderInfo)
     {
-        //To Do
+        String[] names = orderInfo.split(" ");
+        orderId=Long.parseLong(names[2]);
+        productId=Long.parseLong(names[5]);
+        quantity=Integer.parseInt(names[7]);
     }
 
     public OrderProduct(long oId, long pId, int quantity)

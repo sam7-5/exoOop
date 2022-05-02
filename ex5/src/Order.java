@@ -12,15 +12,13 @@ public class Order {
     private Date orderDate;
     private Date deliveryDate;
     private OrderStatus status;
-
     private long customrId;
 
-    public Order(String orderInfo)  {
-       //To Do
+    public Order(String orderInfo) {
+        //To Do
     }
 
-    public Order(long Oid, Date OorderDate, Date OdeliveryDate, OrderStatus Ostatus, long OcustomrId)
-    {
+    public Order(long Oid, Date OorderDate, Date OdeliveryDate, OrderStatus Ostatus, long OcustomrId) {
         setOrderId(Oid);
         setOrderDate(OorderDate);
         setDeliveryDate(OdeliveryDate);
@@ -29,11 +27,9 @@ public class Order {
     }
 
 
-
-    public String toString()
-    {
-        SimpleDateFormat ft = new SimpleDateFormat ("dd/MM/yyyy");
-        return "order: "+ getOrderId() + " order date: "+ ft.format(getOrderDate()) +" delivery date: "+ ft.format(getDeliveryDate()) + " status: "+ getStatus() + " customr id: "+ getCustomrId()+"\n";
+    public String toString() {
+        SimpleDateFormat ft = new SimpleDateFormat("dd/MM/yyyy");
+        return "order: " + getOrderId() + " order date: " + ft.format(getOrderDate()) + " delivery date: " + ft.format(getDeliveryDate()) + " status: " + getStatus() + " customr id: " + getCustomrId() + "\n";
     }
 
     public long getOrderId() {

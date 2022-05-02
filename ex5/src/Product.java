@@ -2,20 +2,22 @@
 
 import static java.lang.Long.parseLong;
 
-public class Product
-{
+public class Product {
     private long ProductId;
     private String name;
     private ProductCategory category;
     private double price;
 
-    public Product(String orderInfo)
-    {
-        //To Do
+    public Product(String orderInfo) {
+        String[] names = orderInfo.split(" ");
+
+        ProductId = Long.parseLong(names[1]);
+        name = names[2];
+        category = ProductCategory.valueOf(names[4]);
+        price = Double.parseDouble(names[6]);
     }
 
-    public Product(long PId, String Pname, ProductCategory Pcategory, double Pprice)
-    {
+    public Product(long PId, String Pname, ProductCategory Pcategory, double Pprice) {
         setProductId(PId);
         setName(Pname);
         setCategory(Pcategory);
@@ -24,9 +26,8 @@ public class Product
     }
 
 
-    public String toString()
-    {
-        return "Product: "+ getProductId() + " "+ getName() +" category: "+ getCategory() + " price: "+ getPrice()+"\n";
+    public String toString() {
+        return "Product: " + getProductId() + " " + getName() + " category: " + getCategory() + " price: " + getPrice() + "\n";
     }
 
     public long getProductId() {
