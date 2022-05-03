@@ -1,5 +1,4 @@
-
-
+import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -11,22 +10,23 @@ import static java.util.function.UnaryOperator.identity;
 import static java.util.stream.Collectors.*;
 
 public class BL implements IBL {
+
     @Override
     public Product getProductById(long productId) {
-        //To do
-        return null;
+        Product product = DataSource.allProducts.stream().filter(prod -> (productId == prod.getProductId())).findAny().orElse(null);
+        return product;
     }
 
     @Override
     public Order getOrderById(long orderId) {
-        //To do
-        return null;
+        Order order =DataSource.allOrders.stream().filter(order1 -> (orderId==order1.getOrderId())).findAny().orElse(null);
+        return order;
     }
 
     @Override
     public Customer getCustomerById(long customerId) {
-        //To do
-        return null;
+        Customer customer =DataSource.allCustomers.stream().filter(customer1 -> (customerId==customer1.getId())).findAny().orElse(null);
+        return customer;
     }
 
 
@@ -61,8 +61,7 @@ public class BL implements IBL {
     }
 
     @Override
-    public List<Product> getOrderProducts(long orderId)
-    {
+    public List<Product> getOrderProducts(long orderId) {
         //To do
         return null;
     }
@@ -79,6 +78,7 @@ public class BL implements IBL {
         return null;
 
     }
+
     @Override
     public double sumOfOrder(long orderID) {
         //To do

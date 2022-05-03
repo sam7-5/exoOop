@@ -11,10 +11,10 @@ public class Product {
     public Product(String orderInfo) {
         String[] names = orderInfo.split(" ");
 
-        ProductId = Long.parseLong(names[1]);
-        name = names[2];
-        category = ProductCategory.valueOf(names[4]);
-        price = Double.parseDouble(names[6]);
+        setProductId(Long.parseLong(names[1]));
+        setName(names[2]);
+        setCategory(ProductCategory.valueOf(names[4]));
+        setPrice(Double.parseDouble(names[6]));
     }
 
     public Product(long PId, String Pname, ProductCategory Pcategory, double Pprice) {

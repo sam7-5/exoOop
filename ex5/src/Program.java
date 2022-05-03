@@ -1,13 +1,12 @@
 
 
-class Program
-{
+class Program {
     public static void main(String args[]) {
 
         IBL myBl = new BL();
 
         System.out.println("---------getProductById:--------");
-        System.out.println(myBl.getProductById(495L));
+        System.out.println( myBl.getProductById(495L));
 
         System.out.println("---------getOrderById:--------");
         System.out.println(myBl.getOrderById(241L));
@@ -35,7 +34,7 @@ class Program
         myBl.getOrderProducts(24L).forEach(System.out::print);
 
         System.out.println("---------getCustomersWhoOrderedProduct:--------");
-        myBl.getCustomersWhoOrderedProduct (18L).forEach(System.out::print);
+        myBl.getCustomersWhoOrderedProduct(18L).forEach(System.out::print);
 
         System.out.println("---------getMaxOrderedProduct:--------");
         myBl.getMaxOrderedProduct();
