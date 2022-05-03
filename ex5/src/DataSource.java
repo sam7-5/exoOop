@@ -14,7 +14,7 @@ public class DataSource {
     public static List<Product> allProducts;
     public static List<OrderProduct> allOrderProducts;
     // Update this path according to your data files location
-    public static String basePath = "C:\\Users\\shmouel\\IdeaProjects\\exoOop\\ex5\\data\\";
+    public static String basePath = "";
     public static String customersPath = basePath +"customers.txt";
     public static String ordersPath = basePath +"orders.txt";
     public static String productsPath = basePath +"products.txt";
@@ -29,7 +29,6 @@ public class DataSource {
             allOrderProducts = readOrderProductsfromFile();
         } catch (IOException e) { e.printStackTrace(); }
     }
-
     public static List<Customer> readCustomersfromFile() throws IOException {
         List<Customer> lst =
                 Files.lines(Paths.get(customersPath))
@@ -51,8 +50,6 @@ public class DataSource {
                 Files.lines(Paths.get(productsPath))
                         .map(l->new Product(l))
                         .collect(Collectors.toList());
-
-
        return lst;
     }
 

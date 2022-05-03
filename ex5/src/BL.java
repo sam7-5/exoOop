@@ -1,6 +1,8 @@
-import javax.xml.crypto.Data;
-import java.io.IOException;
-import java.util.*;
+
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import static java.util.Collections.reverseOrder;
@@ -9,7 +11,6 @@ import static java.util.function.UnaryOperator.identity;
 import static java.util.stream.Collectors.*;
 
 public class BL implements IBL {
-
     @Override
     public Product getProductById(long productId) {
         Product product = DataSource.allProducts.stream().filter(prod -> (productId == prod.getProductId())).findAny().orElse(null);
@@ -18,8 +19,8 @@ public class BL implements IBL {
 
     @Override
     public Order getOrderById(long orderId) {
-        Order order = DataSource.allOrders.stream().filter(order1 -> (orderId == order1.getOrderId())).findAny().orElse(null);
-        return order;
+        //To do
+        return null;
     }
 
     @Override
@@ -83,7 +84,6 @@ public class BL implements IBL {
         return null;
 
     }
-
     @Override
     public double sumOfOrder(long orderID) {
         //To do
