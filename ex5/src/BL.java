@@ -1,3 +1,4 @@
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -30,8 +31,8 @@ public class BL implements IBL {
 
     @Override
     public List<Product> getProducts(ProductCategory cat, double price) {
-        List<Product> lst = DataSource.allProducts.stream().filter(product -> (product.getCategory() == cat)).collect(toList())
-                .stream().filter(product -> (product.getPrice() <= price)).collect(toList());
+        List<Product> lst = DataSource.allProducts.stream().filter(product -> (product.getCategory() == cat))
+                .filter(product -> (product.getPrice() <= price)).collect(toList());
         lst.sort(Comparator.comparing(Product::getProductId));
 
         return lst;
@@ -39,20 +40,23 @@ public class BL implements IBL {
 
     @Override
     public List<Customer> popularCustomers() {
-        //To do
-        return null;
+        List<Customer> lst = DataSource.allCustomers.stream().filter(pop -> getCustomerOrders(pop.getId()).size() > 10)
+                .filter(cu -> (cu.getTier() == 3)).collect(toList());
+        lst.sort(Comparator.comparing(Customer::getId));
+        return lst;
     }
 
     @Override
     public List<Order> getCustomerOrders(long customerId) {
-        //To do
-        return null;
+        List<Order> lst = DataSource.allOrders.stream().filter(order -> (order.getCustomrId() == customerId)).collect(toList());
+        lst.sort(Comparator.comparing(Order::getOrderId));
+        return lst;
     }
 
     @Override
     public long numberOfProductInOrder(long orderId) {
-        //To do
-        return 0;
+        long number = DataSource.allOrderProducts.stream().filter(orderProduct -> (orderProduct.getOrderId() ==  orderId)).count();
+        return number;
     }
 
     @Override
