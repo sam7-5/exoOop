@@ -1,7 +1,5 @@
 import java.io.IOException;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.Collections.reverseOrder;
@@ -19,21 +17,24 @@ public class BL implements IBL {
 
     @Override
     public Order getOrderById(long orderId) {
-        Order order =DataSource.allOrders.stream().filter(order1 -> (orderId==order1.getOrderId())).findAny().orElse(null);
+        Order order = DataSource.allOrders.stream().filter(order1 -> (orderId == order1.getOrderId())).findAny().orElse(null);
         return order;
     }
 
     @Override
     public Customer getCustomerById(long customerId) {
-        Customer customer =DataSource.allCustomers.stream().filter(customer1 -> (customerId==customer1.getId())).findAny().orElse(null);
+        Customer customer = DataSource.allCustomers.stream().filter(customer1 -> (customerId == customer1.getId())).findAny().orElse(null);
         return customer;
     }
 
 
     @Override
     public List<Product> getProducts(ProductCategory cat, double price) {
-        //To do
-        return null;
+        List<Product> lst = DataSource.allProducts.stream().filter(product -> (product.getCategory() == cat)).collect(toList())
+                .stream().filter(product -> (product.getPrice() <= price)).collect(toList());
+        lst.sort(Comparator.comparing(Product::getProductId));
+
+        return lst;
     }
 
     @Override
