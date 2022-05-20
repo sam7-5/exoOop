@@ -55,10 +55,14 @@ public class Main {
                     System.out.println("the total size is "+ sizeCalcVisitor.getSumByte() +" bytes");
                     break;
                 case "st":
-                    //TODO: Add statistics behavior
+                    FileDetailsStatVisitor statVisitor=new FileDetailsStatVisitor();
+                    root.accept(statVisitor);
+
                     break;
                 case "sh":
-                    //TODO: Add short representation behavior
+                    FileDetailsRepresentationVisitor representationVisitor=new FileDetailsRepresentationVisitor();
+                    root.accept(representationVisitor);
+                  //TODO: add path when necessary
             }
         }
     }
