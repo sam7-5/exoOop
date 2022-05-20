@@ -50,7 +50,9 @@ public class Main {
                     System.out.println("Directory root has "+countingVisitor.getNumberOfFiles()+" files.");
                     break;
                 case "sz":
-                    //TODO: Add size calculation behavior
+                    FileDetailsSizeCalcVisitor sizeCalcVisitor=new FileDetailsSizeCalcVisitor();
+                    root.accept(sizeCalcVisitor);
+                    System.out.println("the total size is "+ sizeCalcVisitor.getSumByte() +" bytes");
                     break;
                 case "st":
                     //TODO: Add statistics behavior
