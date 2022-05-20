@@ -45,7 +45,9 @@ public class Main {
         while (!(myString = scanner.nextLine()).equals("q")){
             switch (myString){
                 case "c":
-                    //TODO: Add counting behavior
+                    FileDetailsCountingVisitor countingVisitor=new FileDetailsCountingVisitor();
+                    root.accept(countingVisitor);
+                    System.out.println("Directory root has "+countingVisitor.getNumberOfFiles()+" files.");
                     break;
                 case "sz":
                     //TODO: Add size calculation behavior

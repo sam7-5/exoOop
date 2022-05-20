@@ -21,6 +21,4 @@ public class DirectoryDetails extends FileDetails {
     public void addFile(FileDetails fileDetails) {
         childFileDetails.add(fileDetails);
     }
-
-    //https://www.baeldung.com/java-composite-pattern#:~:text=The%20composite%20pattern%20is%20meant,a%20whole%20hierarchy%20of%20objects.
 }
