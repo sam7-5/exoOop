@@ -2,9 +2,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FileDetailsFactory {
-    public static void main(String[] args) {
-        FileDetails details = FileDetailsFactory.getFileDetails("web/backup.mp3 length in seconds: 354, 7901 bytes");
-    }
+ //   public static void main(String[] args) {
+   //     FileDetails details = FileDetailsFactory.getFileDetails("web/backup.mp3 length in seconds: 354, 7901 bytes");
+    //}
     private final static String EXTENTION_CAPTURE_PATTERN = "^[^ .]*(\\.[^ ]*)?";
     private final static String MP3_CAPTURE_PATTERN = "(.*/)?([^ /]*) length in seconds: (\\d+), (\\d+) bytes";
     private final static String JPG_CAPTURE_PATTERN = "(.*/)?([^ /]*) (\\d+)x(\\d+), (\\d+) bytes";

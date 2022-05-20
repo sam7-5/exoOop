@@ -1,4 +1,3 @@
-
 public class HamburgerFactory {
     public static Hamburger createHamburger(String code){
         //TODO: fix

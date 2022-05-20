@@ -33,7 +33,7 @@ public class Main {
         return root;
     }
     public static void fileMenu(Scanner scanner) throws IOException {
-        String path="files.txt";
+        String path="C:\\Users\\shmouel\\IdeaProjects\\exoOop\\ex7\\src\\files.txt";
         FileDetails root= readFileDetails(path);
         System.out.println("Choose from the following options:\n" +
                 "q: quit\n" +
