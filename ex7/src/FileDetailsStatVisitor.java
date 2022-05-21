@@ -16,16 +16,15 @@ public class FileDetailsStatVisitor implements FileDetailsVisitor {
 
     @Override
     public void visit(JpgFileDetails jpgFileDetails) {
-        int result = jpgFileDetails.getSize() / (jpgFileDetails.getHeight() * jpgFileDetails.getWidth());
-       //double round = result % 1;
-       //int toPrint = 0;
-       //if (round > 0.5) {
-       //    toPrint = (int) Math.ceil(jpgFileDetails.getSize() / (jpgFileDetails.getHeight() * jpgFileDetails.getWidth()));
-       //}
-       //else {
-       //    toPrint=(int)result;
-       //}
-        System.out.println("The picture " + jpgFileDetails.getName() + " has an average of " + result + " bytes per pixel.");
+        double result = (double) jpgFileDetails.getSize() / (double) ((jpgFileDetails.getHeight() * jpgFileDetails.getWidth()));
+        double round = result % 1;
+        int toPrint = 0;
+        if (round > 0.5) {
+            toPrint = (int) Math.ceil((double)jpgFileDetails.getSize() /(double) (jpgFileDetails.getHeight() * jpgFileDetails.getWidth()));
+        } else {
+            toPrint = (int) result;
+        }
+        System.out.println("The picture " + jpgFileDetails.getName() + " has an average of " + toPrint + " bytes per pixel.");
     }
 
     @Override
