@@ -57,7 +57,7 @@ public class Main {
                 case "st":
                     FileDetailsStatVisitor statVisitor=new FileDetailsStatVisitor();
                     root.accept(statVisitor);
-
+                    //TODO: add path when necessary and round to upper when above 0.5
                     break;
                 case "sh":
                     FileDetailsRepresentationVisitor representationVisitor=new FileDetailsRepresentationVisitor();
