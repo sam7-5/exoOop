@@ -1,16 +1,19 @@
-
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 class Program {
     public static void main(String args[]) {
 
         IBL myBl = new BL();
-/*
+
+
         System.out.println("---------getProductById:--------");
-        System.out.println( myBl.getProductById(495L));
-*/
+        System.out.println(myBl.getProductById(495L));
+
         System.out.println("---------getOrderById:--------");
         System.out.println(myBl.getOrderById(241L));
-/*
+
         System.out.println("---------getCustomerById:--------");
         System.out.println(myBl.getCustomerById(284L));
 
@@ -30,6 +33,7 @@ class Program {
         System.out.println("---------getPopularOrderedProduct:--------");
         myBl.getPopularOrderedProduct(10).forEach(System.out::print);
 
+
         System.out.println("---------getOrderProducts:--------");
         myBl.getOrderProducts(24L).forEach(System.out::print);
 
@@ -48,6 +52,5 @@ class Program {
 
         System.out.println("---------ThreeTierCustomerWithMaxOrders:--------");
         myBl.ThreeTierCustomerWithMaxOrders().forEach(System.out::print);
-*/
     }
 } 

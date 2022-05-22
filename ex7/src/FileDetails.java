@@ -23,6 +23,6 @@ public abstract class FileDetails {
         return path;
     }
 
-    abstract public void accept(FileDetailsVisitor fileDetailsVisitor);
-
-    }
+    // added -- need check
+    public void accept(FileDetailsVisitor fileDetailsVisitor){};
+}
