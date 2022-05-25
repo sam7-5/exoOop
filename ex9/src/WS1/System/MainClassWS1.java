@@ -1,4 +1,4 @@
-package WS1.StudentCode;
+package WS1.System;
 
 import WS1.Observables.WeatherMonitoringSystem;
 import WS1.Observers.Log;
