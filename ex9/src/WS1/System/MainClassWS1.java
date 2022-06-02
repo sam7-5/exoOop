@@ -1,8 +1,9 @@
 package WS1.System;
 
 import WS1.Observables.WeatherMonitoringSystem;
-import WS1.Observers.Log;
-import WS1.Observers.MonitoringScreen;
+import WS1.Observer.Log;
+import WS1.Observer.MonitoringScreen;
+
 
 public class MainClassWS1
 {
