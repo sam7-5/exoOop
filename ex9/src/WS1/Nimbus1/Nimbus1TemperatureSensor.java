@@ -14,6 +14,5 @@ public class Nimbus1TemperatureSensor extends Sensor {
         return RandomSupplier.getRnd().nextInt(40);
     }
 
-    public void addObserver(MSTempObserver msTempObserver) {
-    }
+
 }
