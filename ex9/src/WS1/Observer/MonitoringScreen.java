@@ -12,5 +12,7 @@ public class MonitoringScreen {
 
     public void displayTemperature(int data) {
     }
+    public void displayPressure(int data) {
+    }
 }
 
