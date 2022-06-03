@@ -1,6 +1,7 @@
 package WS1.Nimbus1;
 
 import WS1.Observables.Sensor;
+import WS1.Observer.MSTempObserver;
 
 public class Nimbus1TemperatureSensor extends Sensor {
 
@@ -11,5 +12,8 @@ public class Nimbus1TemperatureSensor extends Sensor {
     public int read() {
         // temperature between 0 and 40
         return RandomSupplier.getRnd().nextInt(40);
+    }
+
+    public void addObserver(MSTempObserver msTempObserver) {
     }
 }

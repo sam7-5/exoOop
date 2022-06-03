@@ -1,6 +1,6 @@
 package WS1.Observables;
 
-import WS1.observers.Observer;
+import WS1.Observer.Observer;
 
 import java.util.ArrayList;
 
