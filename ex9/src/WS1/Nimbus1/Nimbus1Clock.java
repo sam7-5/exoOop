@@ -3,7 +3,7 @@ package WS1.Nimbus1;
 import WS1.Observables.AlarmClock;
 
 public class Nimbus1Clock extends AlarmClock {
-    protected Nimbus1Clock() {
+    public Nimbus1Clock() {
         new Thread("polling Alarm Clock Records") {
             public void run() {
                 System.out.println("running clock thread ---");

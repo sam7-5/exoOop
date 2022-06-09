@@ -1,5 +1,6 @@
 package WS1.Observables;
 
+import WS1.Nimbus1.Nimbus1Clock;
 import WS1.Observables.AlarmClockRecord;
 import WS1.Observables.AlarmListener;
 
@@ -10,8 +11,8 @@ public class AlarmClock {
     protected static AlarmClock instance = null;
     private ArrayList<AlarmClockRecord> itsAlarmClockRecords = new ArrayList();
 
-    protected AlarmClock() {
-    }
+
+
 
     public static AlarmClock theInstance() {
         if (null == instance)
