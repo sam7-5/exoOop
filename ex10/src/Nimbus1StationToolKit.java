@@ -1,8 +1,7 @@
-
-
-
+import WS1.Nimbus1.Nimbus1TemperatureSensor;
 
 public class Nimbus1StationToolKit implements StationToolKit {
+
     @Override
     public SensorImp makeTemperature() {
         return null;
@@ -15,7 +14,7 @@ public class Nimbus1StationToolKit implements StationToolKit {
 
     @Override
     public AlarmClockImp getAlarmClock() {
-        return null;
+        return Nimbus1Clock.theInstance();
     }
 
     @Override
