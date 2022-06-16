@@ -2,7 +2,7 @@ package WS1.Observer;
 
 public class LogPressObserver implements Observer{
     Log itsLog;
-    LogPressObserver(Log log){
+   public LogPressObserver(Log log){
         System.out.println("LogPressObserver was created");
         itsLog = log;
     }

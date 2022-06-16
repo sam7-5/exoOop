@@ -34,7 +34,7 @@ public class WeatherMonitoringSystem {
 
     public void addTemperatureObserver(Observer ob) {
         itsTS.addObserver(ob);
-        System.out.println("MSTempObserver observes temperature");
+        System.out.println(ob.getClass().getName() + /*"MSTempObserver */" observes temperature");
     }
 
     public void addPressureObserver(Observer ob) {

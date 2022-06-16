@@ -5,7 +5,7 @@ import WS1.Observables.WeatherMonitoringSystem;
 public class Log {
     public Log(WeatherMonitoringSystem ws) {
         System.out.println("Log was created");
-        ws.addPressureObserver(this::displayPressure);
+        ws.addPressureObserver(new WS1.Observer.LogPressObserver(this));
         ws.addPressureTrendObserver(this::displayPressureTrend);
 
     }
