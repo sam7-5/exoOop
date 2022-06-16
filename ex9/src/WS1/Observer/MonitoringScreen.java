@@ -4,6 +4,11 @@ import WS1.Nimbus1.Nimbus1TemperatureSensor;
 import WS1.Observables.WeatherMonitoringSystem;
 
 public class MonitoringScreen {
+
+    public MonitoringScreen( ) {
+        System.out.println("MonitoringScreen was created");
+
+    }
     public MonitoringScreen(WeatherMonitoringSystem ws) {
         System.out.println("MonitoringScreen was created");
         ws.theInstance().addTemperatureObserver(this::displayTemperature);

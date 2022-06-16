@@ -3,6 +3,9 @@ package WS1.Observer;
 import WS1.Observables.WeatherMonitoringSystem;
 
 public class Log {
+    public Log() {
+        System.out.println("Log was created");
+    }
     public Log(WeatherMonitoringSystem ws) {
         System.out.println("Log was created");
         ws.addPressureObserver(new WS1.Observer.LogPressObserver(this));

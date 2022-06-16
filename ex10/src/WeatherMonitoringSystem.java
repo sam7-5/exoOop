@@ -1,18 +1,24 @@
-import WS1.Observables.AlarmClock;
-import WS1.Observables.PressureTrendSensor;
-import WS1.Observables.Sensor;
 
-public class WeatherMonitoringSystem
-{
+
+public class WeatherMonitoringSystem {
     public static WeatherMonitoringSystem instance = null;
+    private StationToolKit st;
+    private AlarmClock ac;
+    private Sensor ts;
+    private Sensor ps;
+    private PressureTrendSensor sensor;
+    private TemperatureHiLo thl;
 
-    private WeatherMonitoringSystem()    {
-        // TODO: complete. Initialize the toolkit, clock, sensors and temperatureHiLo
-        Nimbus1StationToolKit st=new Nimbus1StationToolKit();
-        AlarmClock ac=new AlarmClock(StationToolKit st);
-        Sensor ps=new Sensor(AlarmClock ac, String typeOfSensor, int checkInterval, StationToolKit toolkit);
-        PressureTrendSensor sensor=new PressureTrendSensor(Sensor ps);
-        TemperatureHiLo(Sensor sensor, AlarmClock ac, StationToolKit st);
+    private WeatherMonitoringSystem() {
+        System.out.println("WeatherMonitoringSystem was created");
+
+        st = new Nimbus1StationToolKit();
+        ac = new AlarmClock(st);
+
+        ts = new Sensor(ac, "TemperatureSensor", 6000, st);
+        ps = new Sensor(ac, "PressureSensor", 6000, st);
+        sensor = new PressureTrendSensor(ps);
+        thl = new TemperatureHiLo(ts, ac, st);
     }
 
 
@@ -22,7 +28,21 @@ public class WeatherMonitoringSystem
         }
         return instance;
     }
-    // TODO: add functions for adding observers
 
+    public void addTemperatureObserver(Observer ob) {
+        itsTS.addObserver(ob);
+        System.out.println(ob.getClass().getName() + /*"MSTempObserver */" observes temperature");
+    }
+
+    public void addPressureObserver(Observer ob) {
+        itsBPS.addObserver(ob);
+        System.out.println(ob.getClass().getName() + " observes pressure");
+
+    }
+
+    public void addPressureTrendObserver(Observer ob) {
+        itsBPT.addObserver(ob);
+        System.out.println("LogPressTrendObserver observes pressure trend");
+    }
 
 }
