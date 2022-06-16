@@ -1,15 +1,14 @@
-import WS1.Nimbus1.Nimbus1TemperatureSensor;
 
 public class Nimbus1StationToolKit implements StationToolKit {
 
     @Override
     public SensorImp makeTemperature() {
-        return null;
+        return new Nimbus1TemperatureSensor();
     }
 
     @Override
     public SensorImp makePressure() {
-        return null;
+        return new Nimbus1PressureSensor();
     }
 
     @Override
@@ -19,7 +18,6 @@ public class Nimbus1StationToolKit implements StationToolKit {
 
     @Override
     public PersistentImp getPersistentImp() {
-        return null;
+        return new Nimbus1NVM();
     }
-    // TODO: complete
 }
