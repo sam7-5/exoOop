@@ -2,18 +2,20 @@ import WS1.Observables.AlarmClock;
 import WS1.Observables.PressureTrendSensor;
 import WS1.Observables.Sensor;
 
-// TODO: complete class declaration
-public class TemperatureHiLo{
-    // TODO: add fields
+public class TemperatureHiLo implements AlarmListener implements Observer{
+    AlarmClock itsAlarmClock;
+    HiLoData itsHiLoData;
+    Sensor itsSensor;
     public TemperatureHiLo(Sensor sensor, AlarmClock ac, StationToolKit st) {
-        // TODO: complete. Initialize Proxy and connect the TemperatureHiLo to the clock and sensor.
+        ac.wakeEveryDay(this);
+        sensor.addObserver(this)
     }
 
 
 
-
     public void update(int val) {
-        // TODO: complete
+        time=itsAlarmClock.getTime();
+        itsAlarmClock.currentReading(val,time);
     }
 
     public void wakeUp() {
